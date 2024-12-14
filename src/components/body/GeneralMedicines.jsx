@@ -1,7 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-const GeneralMedicines = () => {
+// Import the images for light and dark modes
+import FC1 from "../../assets/images/Banners/GeneralMedicines01.png"; // Light Mode image
+import FC2 from "../../assets/images/Banners/GeneralMedicines02.png"; // Dark Mode image
+
+const GeneralMedicines = ({ mode }) => {
   // Define a function to determine the color of the arrows
   const getArrowColor = () => {
     return {
@@ -31,25 +35,40 @@ const GeneralMedicines = () => {
     prevArrow: <div className="slick-prev-custom" />, // Custom prev arrow
   };
 
+  // Based on the mode, choose the image
+  const images = mode === "light" ? [FC1] : [FC2];
+
+  // Conditionally set styles for the p tag based on the mode
+  const textStyle = {
+    color: mode === "light" ? "#000000" : "#FFFFFF", // Light mode text is black, dark mode text is white
+    fontWeight: "bold",
+    fontSize: "1.25rem",
+  };
+
   return (
     <div className="container my-1">
-      <p className="ms-3 fw-bold fs-4">General Medicines</p>
+      <p className="ms-3" style={textStyle}>General Medicines</p>
       <Slider {...settings}>
-        {medicines.map((medicine, index) => (
-          <div key={index} className="d-flex justify-content-center align-items-center">
-            <div
-              className="bg-success text-center text-white p-3"
-              style={{
-                width: '300px',
-                height: '200px',
-                borderRadius: '15px', // Add curved corners here
-              }}
-            >
-              <h5 className="card-title">{medicine.title}</h5>
-              <p className="card-text">{medicine.description}</p>
+        {[...Array(9)].map((_, index) => {
+          const imageIndex = index % images.length; // To loop through the images
+          return (
+            <div key={index} className="d-flex justify-content-center align-items-center">
+              <div 
+                className="bg-primary mx-3" 
+                style={{
+                  width: '430px', 
+                  height: '200px', 
+                  borderRadius: '15px',
+                  backgroundImage: `url(${images[imageIndex]})`,
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center',
+                  border: '1px solid', // Add border to the slick items
+                  borderColor: '#E5E4E2',
+                }} 
+              ></div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </Slider>
     </div>
   );

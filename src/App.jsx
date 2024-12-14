@@ -1,24 +1,26 @@
 import { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom"; // Moved Router import
 import "./App.css";
-import Navbar from "./components/header/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SubNavbar from "./components/header/SubNavbar";
+import AdBanners01 from "./components/body/AdBanners01";
+import AdBanners02 from "./components/body/AdBanners02";
+import AdBanners03 from "./components/body/AdBanners03";
+import Brands from "./components/brands/Brands";
 import Carousel from "./components/body/Carousel";
-import FeatureCategory from "./components/body/FeatureCategory";
-import SlickSlider1 from "./components/body/PopularCategories";
-import OrderComponent from "./components/body/OrderComponent";
-import GeneralMedicines from "./components/body/GeneralMedicines";
-import Vitamins from "./components/body/Vitamins";
-import MedicatedCreams from "./components/body/MedicatedCreams";
+import Devices from "./components/body/Devices";
 import Electrolytes from "./components/body/Electrolytes";
-import PainReliefs from "./components/body/PainReliefs";
+import Footer from "./components/footer/footer";
+import GeneralMedicines from "./components/body/GeneralMedicines";
+import HealthConcerns from "./components/body/HealthConcerns";
+import MedicatedCreams from "./components/body/MedicatedCreams";
 import Nutritionals from "./components/body/Nutritionals";
 import Orthopaedics from "./components/body/Orthopaedics";
-import Devices from "./components/body/Devices";
-import Brands from "./components/brands/Brands";
-import PharmaDescription from "./components/footer/PharmaDescription"
-import Footer from "./components/footer/footer";
-import AdBanners01 from "./components/body/AdBanners01"
+import OrderComponent from "./components/body/OrderComponent";
+import PainReliefs from "./components/body/PainReliefs";
+import PharmaDescription from "./components/footer/PharmaDescription";
+import PopularCategories from "./components/body/PopularCategories";
+import SubNavbar from "./components/header/SubNavbar";
+import Navbar from "./components/header/Navbar";
+import Vitamins from "./components/body/Vitamins";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -45,29 +47,23 @@ function App() {
         />
         <SubNavbar />
         <Carousel />
-        <AdBanners01 />
-        <FeatureCategory />
-        <SlickSlider1 />
+        <AdBanners01 mode={mode} toggleMode={toggleMode} />
+        <HealthConcerns mode={mode} />
+        <PopularCategories mode={mode} />
         <OrderComponent />
-        <GeneralMedicines />
-        <Vitamins />
+        <GeneralMedicines mode={mode} />
+        <Vitamins mode={mode} />
         <MedicatedCreams />
         <Electrolytes />
-        <PainReliefs />
-        {/* <AdBanners /> */}
+        <PainReliefs mode={mode} />
+        <AdBanners02 />
         <Nutritionals />
-        <Orthopaedics />
+        <Orthopaedics mode={mode} />
         <Devices />
-        {/* <AdBanners /> */}
+        <AdBanners03 mode={mode} />
         <Brands />
         <PharmaDescription />
-
-        {/* <h3 className='ms-5'>Food Suppliments</h3> */}
-        {/* <h3 className='ms-5'>Baby Care </h3> */}
-        {/* <h3 className='ms-5'>Hygiene Maintenance</h3> */}
-
         <Footer mode={mode} />
-
       </Router>
     </>
   );
