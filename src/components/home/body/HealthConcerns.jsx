@@ -1,13 +1,17 @@
-import HC1 from "../../assets/images/Banners/FeaturesCategories01.png"; // Light Mode image
-import HC2 from "../../assets/images/Banners/FeaturesCategories02.jpg"; // Dark Mode image
-
 import React from "react";
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css'; 
+import { useMode } from "../../../contexts/ModeContext"; // Import the custom hook for mode context
+import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
-const HealthConcerns = ({ mode }) => {
+// Import the images for light and dark modes
+import HC1 from "../../../assets/images/Banners/FeaturesCategories01.png"; // Light Mode image
+import HC2 from "../../../assets/images/Banners/FeaturesCategories02.jpg"; // Dark Mode image
+
+const HealthConcerns = () => {
+  const { mode } = useMode(); // Get the current mode from the context
+
   const settings = {
     infinite: true, // Enables infinite scrolling
     speed: 600, // Speed of slide transition

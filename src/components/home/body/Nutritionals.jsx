@@ -1,9 +1,12 @@
 import React from 'react';
 import Slider from 'react-slick';
-import FC1 from "../../assets/images/Banners/ProductSlickers.png"; // Image for the slider
+import { useMode } from "../../../contexts/ModeContext"; // Import the custom hook for mode context
+import FC1 from "../../../assets/images/Banners/ProductSlickers.png"; // Image for the carousel
 
-const Vitamins = ({ mode }) => {
-  // Array of medicines
+const Nutritionals = () => {
+  const { mode } = useMode(); // Get the current mode from the context
+
+  // Array of objects containing title and description for each product
   const medicines = [
     { title: 'D-Vit 1000', description: 'Common vitamin D supplement for bone health and immune system support.' },
     { title: 'Cobadex CZS', description: 'A multivitamin supplement containing Vitamin B12, Vitamin C, and Zinc for energy and immunity.' },
@@ -16,9 +19,8 @@ const Vitamins = ({ mode }) => {
     { title: 'Vitamin C 500mg', description: 'Vitamin C supplement to boost immunity and skin health, commonly used during cold and flu season.' },
   ];
 
-  const images = [FC1]; // Image to use in the slider
+  const images = [FC1]; // Array of images to loop through
 
-  // Slider settings
   const settings = {
     infinite: true, // Enables infinite scrolling
     slidesToShow: 5, // Number of slides to show at once
@@ -34,23 +36,24 @@ const Vitamins = ({ mode }) => {
 
   return (
     <div className="container my-1">
-      <p className="ms-5 fw-bold fs-4 mt-4" style={textStyle}>Vitamins</p>
-      <Slider className="mx-5" {...settings}>
+      <p className="ms-5 fw-bold fs-4 mt-4" style={textStyle}>Nutritionals</p>
+      <Slider className='mx-5' {...settings}>
         {medicines.map((medicine, index) => {
+          const imageIndex = index % images.length; // To loop through the images
           return (
-            <div key={index} className="d-flex justify-content-center align-items-center ">
+            <div key={index} className="d-flex justify-content-center align-items-center">
               <div
                 className="bg-success text-center text-white p-3"
                 style={{
                   width: '200px',
                   height: '200px',
                   borderRadius: '15px',
-                  backgroundImage: `url(${images[0]})`,
-                  backgroundSize: 'cover', 
+                  backgroundImage: `url(${images[imageIndex]})`,
+                  backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
               >
-                <h5 className="card-title text-black mt-2">{medicine.title}</h5>
+                <h5 className="card-title text-black mt-3">{medicine.title}</h5>
                 <p className="card-text text-black">{medicine.description}</p>
               </div>
             </div>
@@ -61,4 +64,4 @@ const Vitamins = ({ mode }) => {
   );
 };
 
-export default Vitamins;
+export default Nutritionals;

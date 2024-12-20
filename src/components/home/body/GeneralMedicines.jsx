@@ -1,16 +1,19 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { useMode } from '../../../contexts/ModeContext'; // Import the custom hook for mode context
 
 // Import the images for light and dark modes
-import FC1 from "../../assets/images/Banners/GeneralMedicines01.png"; // Light Mode image
-import FC2 from "../../assets/images/Banners/GeneralMedicines02.png"; // Dark Mode image
+import FC1 from "../../../assets/images/Banners/GeneralMedicines01.png"; // Light Mode image
+import FC2 from "../../../assets/images/Banners/GeneralMedicines02.png"; // Dark Mode image
 
-const GeneralMedicines = ({ mode }) => {
+const GeneralMedicines = () => {
+  const { mode } = useMode(); // Get the current mode from the context
+
   // Define a function to determine the color of the arrows
   const getArrowColor = () => {
     return {
-      backgroundColor: 'black', // Default button background color
-      color: 'black',            // Default arrow color
+      backgroundColor: mode === "dark" ? "#FFFFFF" : "#000000", // Arrow background color based on mode
+      color: mode === "dark" ? "#000000" : "#FFFFFF",           // Arrow color based on mode
     };
   };
 
@@ -31,8 +34,8 @@ const GeneralMedicines = ({ mode }) => {
     infinite: true, // Enables infinite scrolling
     slidesToShow: 4, // Number of slides to show at once
     slidesToScroll: 1, // Number of slides to scroll at a time
-    nextArrow: <div className="slick-next-custom" />, // Custom next arrow
-    prevArrow: <div className="slick-prev-custom" />, // Custom prev arrow
+    nextArrow: <div className="slick-next-custom" style={getArrowColor()} />, // Custom next arrow
+    prevArrow: <div className="slick-prev-custom" style={getArrowColor()} />, // Custom prev arrow
   };
 
   // Based on the mode, choose the image
@@ -63,7 +66,7 @@ const GeneralMedicines = ({ mode }) => {
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center',
                   border: '1px solid', // Add border to the slick items
-                  borderColor: '#E5E4E2',
+                  borderColor: mode === "light" ? '#E5E4E2' : '#333', // Border color based on mode
                 }} 
               ></div>
             </div>

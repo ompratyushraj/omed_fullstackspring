@@ -1,11 +1,15 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { useMode } from "../../../contexts/ModeContext"; // Import the custom hook
 
 // Import the images for light and dark modes
-import FC1 from '../../assets/images/Banners/PopularCategories01.png'; // Light Mode image
-import FC2 from '../../assets/images/Banners/PopularCategories02.png'; // Dark Mode image
+import FC1 from '../../../assets/images/Banners/PopularCategories01.png'; // Light Mode image
+import FC2 from '../../../assets/images/Banners/PopularCategories02.png'; // Dark Mode image
 
-const PopularCategories = ({ mode }) => {
+const PopularCategories = () => {
+  // Access the current mode from the context
+  const { mode } = useMode();
+
   const settings = {
     dots: true, // Enables dots navigation
     infinite: true, // Enables infinite scrolling

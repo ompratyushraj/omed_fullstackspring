@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "../../assets/images/Banners/Banners10.png"; // Import the image
+import Image from "../../../assets/images/Banners/Banners10.png"; // Import the image
 
 const AdBanners02 = () => {
   const bannerStyle = {

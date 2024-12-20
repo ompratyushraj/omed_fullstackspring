@@ -2,9 +2,9 @@ import React from 'react';
 import Slider from 'react-slick'; // Importing Slick Slider component
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import C1 from "../../assets/images/Banners/CarouselBanner01.png";
-import C2 from "../../assets/images/Banners/CarouselBanner02.png";
-import C3 from "../../assets/images/Banners/CarouselBanner03.png";
+import C1 from "../../../assets/images/Banners/CarouselBanner01.png";
+import C2 from "../../../assets/images/Banners/CarouselBanner02.png";
+import C3 from "../../../assets/images/Banners/CarouselBanner03.png";
 
 // Slick Slider settings
 const settings = {

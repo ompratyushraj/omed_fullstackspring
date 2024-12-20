@@ -1,11 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import OMEDLogoLight from "../../assets/images/OMED_Logos/Omed_Logo_Light.png";
 import OMEDLogoDark from "../../assets/images/OMED_Logos/Omed_Logo_Dark.png";
+import { useMode } from '../../contexts/ModeContext.jsx'; // Import the hook
 
-function Navbar({ mode, toggleMode }) {
+function Navbar() {
+  const { mode, toggleMode } = useMode(); // Access mode and toggleMode from context
   const logoSrc = mode === "light" ? OMEDLogoLight : OMEDLogoDark;
   const textClass = mode === "light" ? "dark" : "light";
 
@@ -120,11 +121,5 @@ function Navbar({ mode, toggleMode }) {
     </nav>
   );
 }
-
-// Prop Types for Navbar
-Navbar.propTypes = {
-  mode: PropTypes.string.isRequired,
-  toggleMode: PropTypes.func.isRequired,
-};
 
 export default Navbar;

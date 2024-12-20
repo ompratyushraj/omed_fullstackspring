@@ -1,8 +1,11 @@
 import React from "react";
-import Image01 from "../../assets/images/Banners/Banners01.png"; // Light mode image
-import Image02 from "../../assets/images/Banners/Banners02.png"; // Dark mode image
+import { useMode } from "../../../contexts/ModeContext"; // Import the custom hook
+import Image01 from "../../../assets/images/Banners/Banners01.png"; // Light mode image
+import Image02 from "../../../assets/images/Banners/Banners02.png"; // Dark mode image
 
-const AdBanners01 = ({ mode }) => {
+const AdBanners01 = () => {
+  const { mode } = useMode(); // Access the mode from context
+
   // Select the appropriate image based on the mode
   const bannerImage = mode === "light" ? Image01 : Image02;
 

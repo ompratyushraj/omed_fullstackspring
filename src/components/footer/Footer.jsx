@@ -84,10 +84,11 @@ const SubmitButton = styled.button`
   outline: none;
   transition: all 0.3s ease; /* Smooth transition for hover and click effects */
 
-  &:hover {
+  &:hover .stars{
     background: linear-gradient(45deg, #00FF00, #FFFFFF); /* Reverse gradient on hover */
     box-shadow: 0 0 15px 5px rgb(64, 130, 109); /* White glow on hover */
     color: white;
+    filter: drop-shadow(0 0 10px #ffffff)
   }
 
   &:active {
