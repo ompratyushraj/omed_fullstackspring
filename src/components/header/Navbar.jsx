@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import OMEDLogoLight from "../../assets/images/OMED_Logos/Omed_Logo_Light.png";
 import OMEDLogoDark from "../../assets/images/OMED_Logos/Omed_Logo_Dark.png";
-import { useMode } from '../../contexts/ModeContext.jsx'; // Import the hook
+import { useMode } from '../../contexts/ModeContext.jsx';
+import homepage from "../home/HomePage.jsx";
 
 function Navbar() {
   const { mode, toggleMode } = useMode(); // Access mode and toggleMode from context
@@ -31,6 +32,7 @@ function Navbar() {
                 <img
                   className="mb-2"
                   src={logoSrc}
+                  href="/homepage"
                   alt="OMED Logo"
                   style={{ height: "50px" }}
                 />

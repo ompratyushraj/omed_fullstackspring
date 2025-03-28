@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-// Styled component for the navbar
 const StyledNavbar = styled.nav`
   padding-top: 4px;
   padding-bottom: 4px;
   background-color: #f0f0f0;
 `;
 
-// Reusable Navbar Item Component
 const NavbarItem = ({ item, index }) => (
   <li className="nav-item pe-4" key={index}>
     {!item.dropdown ? (
@@ -27,10 +25,7 @@ const NavbarItem = ({ item, index }) => (
         >
           {item.name}
         </a>
-        <ul
-          className="dropdown-menu"
-          aria-labelledby={`navbarDropdownMenuLink-${index}`}
-        >
+        <ul className="dropdown-menu" aria-labelledby={`navbarDropdownMenuLink-${index}`}>
           {item.dropdown.map((subItem, subIndex) => (
             <li key={subIndex}>
               <a className="dropdown-item" href={item.href}>
@@ -46,33 +41,20 @@ const NavbarItem = ({ item, index }) => (
 
 const SubNavbar = () => {
   const menuItems = [
-    { name: "Home", href: "#" },
-    {
-      name: "Browse All Categories",
-      href: "#",
-      dropdown: ["Action", "Another action"],
-    },
-    {
-      name: "Shop",
-      href: "#",
-      dropdown: ["Action", "Another action"],
-    },
-    {
-      name: "Vendors",
-      href: "#",
-      dropdown: ["Action", "Another action"],
-    },
-    {
-      name: "Mega menu",
-      href: "#",
-      dropdown: ["Action"],
-    },
+    { name: "Home", href: "/" },
+    { name: "Browse All Categories", href: "#", dropdown: ["Action", "Another action"] },
+    { name: "Shop", href: "/shophome" },
+    { name: "Data Entry", href: "/dataentry" },
+    { name: "Products", href: "/products" },
+    { name: "Invoice Entry", href: "/invoiceentryform" },
+    { name: "Vendors", href: "#", dropdown: ["Action", "Another action"] },
+    { name: "Mega menu", href: "#", dropdown: ["Action"] },
   ];
 
   const additionalLinks = [
     { name: "Prescription", href: "#" },
     { name: "Re-order", href: "#" },
-    { name: "Contact Us", href: "#" },
+    { name: "Contact Us", href: "/footer" },
   ];
 
   return (
@@ -85,12 +67,11 @@ const SubNavbar = () => {
             ))}
           </ul>
         </div>
-
         <div className="d-flex justify-content-end pe-5 mx-5">
           <ul className="nav-item my-1 d-flex list-unstyled">
             {additionalLinks.map((link, index) => (
               <li key={index} className="nav-item mx-3">
-                <a className="nav-link active" href={link.href}>
+                <a className="nav-link active" href={link.href} style={{ whiteSpace: 'nowrap' }}>
                   {link.name}
                 </a>
               </li>

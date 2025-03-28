@@ -19,7 +19,7 @@ const LinkGroup = ({ heading, links }) => (
       paddingRight: "1rem", // Adjust right padding to match the left padding
       marginLeft: "1rem",   // Adjust left margin
       marginRight: "1rem",  // Adjust right margin to match the left margin
-      width: "85%",        // Ensure width of the label matches buttons
+      width: "90%",        // Ensure width of the label matches buttons
     }}
   >
     <strong
@@ -132,7 +132,7 @@ const ProductGridSidebar = () => {
   ];
 
   return (
-    <div className="container-left py-4 mx-5" style={{ width: "20%" }}>
+    <div className="container-left py-4 mx-5" style={{ width: "100%" }}>
       {/* Sidebar section */}
       <aside style={{ borderRadius: "25px" }}>
         <div
@@ -154,7 +154,7 @@ const ProductGridSidebar = () => {
             ></button>
           </div>
 
-          <div className="offcanvas-body" style={{ maxHeight: "calc(100vh - 60px)", overflowY: "auto", overflowX: "hidden" }}>
+          <div className="offcanvas-body" style={{ maxHeight: "calc(100vh - 60px)", overflowY: "auto", overflowX: "hidden", scrollbarWidth: "none"}}>
             <nav
               className="bd-links w-100"
               id="bd-docs-nav"
@@ -169,11 +169,9 @@ const ProductGridSidebar = () => {
           </div>
         </div>
       </aside>
-
-      {/* Main content section */}
-      <div>{/* Your main content goes here */}</div>
     </div>
   );
 };
 
 export default ProductGridSidebar;
+

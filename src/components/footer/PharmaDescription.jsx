@@ -10,17 +10,17 @@ const PharmaDescription = () => {
 
       <section className="mb-3">
         <p className="fs-5 text-muted">
-          OMED is Kankarbag's leading healthcare platform. From doctor consultations on chat to online pharmacy and lab tests at home: we have it all covered for you. Having delivered over 25 million orders in 1000+ cities till date, we are on a mission to bring "care" to "health" to give you a flawless healthcare experience.
+          <strong>OMED</strong> is <strong>Kankarbagh's</strong> leading healthcare platform. From doctor consultations on chat to online pharmacy and lab tests at home: we have it all covered for you. Having delivered over 25 million orders in just <strong>Patna</strong> till date, we are on a mission to bring "care" to "health" to give you a flawless healthcare experience.
         </p>
       </section>
 
       <section className="mb-3">
         <h2 className="h2 text-secondary">OMED: Your Local Pharmacy now ONLINE !</h2>
         <p className="fs-5">
-           OMED Pharmacy Retail Store with over 1 lakh medicines available at the best prices. We are your one-stop destination for other healthcare products as well, such as over-the-counter pharmaceuticals, healthcare devices, and homeopathy and ayurveda medicines.
+           <strong>OMED Pharmacy</strong> with over <strong>1 lakh medicines available</strong> at the best prices. We are your <strong>one-stop destination</strong> for other healthcare products as well, such as over-the-counter pharmaceuticals, healthcare devices, and homeopathy and ayurveda medicines.
         </p>
         <p className="fs-5">
-          With OMED, you can buy medicines online now and get them delivered at your doorstep anywhere in the local range of 3 km! The process is simple: search for products, add to cart, and checkout. We'll take care of the rest!
+          With OMED, you can buy medicines online now and get them delivered at your doorstep anywhere in the local range of <strong>3 km.</strong> The process is simple: search for products, add to cart, and checkout. We'll take care of the rest!
         </p>
         <p className="fs-5 font-weight-bold text-success">
           And there’s more – enjoy exclusive discounts on health products and medicines!
@@ -37,12 +37,13 @@ const PharmaDescription = () => {
       <section className="mb-3">
         <h2 className="h2 text-secondary">The Services We Offer</h2>
         <p className="fs-5">
-           OMED is Kankarbagh, Patna's genuine healthcare retail, where you can buy medicines online and offline with discounts. Buy medicine online in Patna.
+           OMED is Kankarbagh, Patna's genuine healthcare retail, where you can buy medicines online and offline with discounts.
         </p>
+        <p className="fs-3 fw-bold text-center ">Buy medicine online in Patna.</p>
       </section>
 
       <footer className="text-center mt-3">
-        <p className="fs-4 text-muted">Customer centricity and relationship is at the heart of everything we do.<br /> Trust us for your healthcare needs!</p>
+        <p className="fs-4 text-muted"><i>Customer centricity and relationship is at the heart of everything we do.<br /> Trust us for your healthcare needs!</i></p>
         <button className="btn btn-outline-secondary btn-lg my-3">Visit Our Online Pharmacy Now</button>
       </footer>
     </div>

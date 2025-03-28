@@ -100,16 +100,26 @@ const SubmitButton = styled.button`
 
 const SocialIcons = styled.div`
   margin-top: 15px;
+  display: flex; /* Ensures icons align horizontally */
+  align-items: center; /* Centers icons vertically if needed */
+  justify-content: flex-start; /* Adjusts horizontal alignment */
+
   a {
-    color: ${(props) => (props.mode === 'light' ? '#343a40' : '#f8f9fa')}; /* Adjust social icon color based on mode */
+    color: ${(props) => (props.mode === 'light' ? '#343a40' : '#f8f9fa')};
     margin-right: 15px;
     font-size: 1.5rem;
     transition: color 0.3s;
+
     &:hover {
-      color: ${(props) => (props.mode === 'light' ? '#007bff' : '#ffcc00')}; /* Light mode links are blue, dark mode links are yellow */
+      color: ${(props) => (props.mode === 'light' ? '#007bff' : '#ffcc00')};
+    }
+
+    &:last-child {
+      margin-right: 0; /* Remove margin for the last icon */
     }
   }
 `;
+
 
 const FooterBottom = styled.div`
   text-align: center;
@@ -148,7 +158,7 @@ function Footer({ mode }) {
           <FooterSection className="col-md-4">
             <FooterTitle mode={mode}>Know Us</FooterTitle>
             <FooterList>
-              <FooterListItem mode={mode}><a href="/">About Us</a></FooterListItem>
+              <FooterListItem mode={mode}><a href="/about">About Us</a></FooterListItem>
               <FooterListItem mode={mode}><a href="/">Contact Us</a></FooterListItem>
               <FooterListItem mode={mode}><a href="/">Become a Health Partner</a></FooterListItem>
               <FooterListItem mode={mode}><a href="/">Licence</a></FooterListItem>
